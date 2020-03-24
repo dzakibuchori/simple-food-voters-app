@@ -1,3 +1,38 @@
-<p>
-  food-list works!
-</p>
+<article class="media is-light" *ngFor="let food of foods">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="/images/{{food.img_id}}_{{food.img_name}}.jpg" alt="{{food.img_id}}_{{food.img_name}}.jpg">
+    </p>
+    <br>
+    <div class="level is-mobile">
+      <a class="level-item" (click)="leftFootImgUrl(food.id)">
+        <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+      </a>
+      <a class="level-item" (click)="rightFootImgUrl(food.id)">
+        <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+      </a>
+    </div>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <h3>{{food.name}}</h3>
+      <p>
+        {{food.description}}
+      </p>
+    </div>
+    <nav class="level-right is-mobile">
+      <a class="level-item button is-success" (click)="upFood(food.id)">
+        <span class="icon is-small"><i class="fa fa-angle-up"></i>&nbsp;+1</span>
+      </a>
+      <a class="level-item button is-danger" (click)="downFood(food.id)">
+        <span class="icon is-small"><i class="fa fa-angle-down"></i>&nbsp;-1</span>
+      </a>
+      <div class="level-item">
+        {{food.vote}}
+      </div>
+    </nav>
+  </div>
+  <div class="media-right">
+    <button (click)="removeFood(food.id)" class="delete"></button>
+  </div>
+</article>
