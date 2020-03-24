@@ -1,8 +1,6 @@
 <article class="media is-light" *ngFor="let food of foods">
   <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="assets/images/{{food.img_id}}_{{food.img_name}}.jpg" alt="{{food.img_id}}_{{food.img_name}}.jpg">
-    </p>
+    <img class="image is-64x64 cover" src="assets/images/{{food.img_id}}_{{food.img_name}}.jpg" alt="{{food.img_id}}_{{food.img_name}}.jpg" c>
     <br>
     <div class="level is-mobile">
       <a class="level-item" (click)="leftFootImgUrl(food.id)">
